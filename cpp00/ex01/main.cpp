@@ -1,6 +1,8 @@
 #include "phonebook.class.hpp"
 #include "contact.class.hpp"
 #include <iostream>
+#include <cstring>
+
 
 static void	add_to_phoneBook(Phonebook *phoneBook)
 {
@@ -18,17 +20,17 @@ int	main(int ac, char **av)
 	Phonebook phoneBook;
 
 	std::cout << "----------------------------------------" << std::endl;
-	std::cout << "|  *Phone Book v0.10.5 Pro ©           |" << std::endl;
+	std::cout << "|  Phone Book v0.10.5 Pro ©            |" << std::endl;
 	std::cout << "----------------------------------------" << std::endl;
 	while (1)
 	{
 		std::cout << "$>";
 		std::cin >> buff;
-		if (strcmp(buff, "ADD"))
+		if (!std::strcmp(buff, "ADD"))
 			add_to_phoneBook(&phoneBook);
-		if (strcmp(buff, "SEARCH"))
+		if (!std::strcmp(buff, "SEARCH"))
 			search_in_phoneBook(&phoneBook);
-		if (strcmp(buff, "EXIT"))
+		if (!std::strcmp(buff, "EXIT"))
 			break ;
 		
 	}

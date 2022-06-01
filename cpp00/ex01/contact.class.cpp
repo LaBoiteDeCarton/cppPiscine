@@ -2,6 +2,7 @@
 
 Contact::Contact(void)
 {
+	std::cout << "contact created" <<std::endl;
 	return ;
 }
 
@@ -21,6 +22,5 @@ void	Contact::LongShow(void)
 
 void	Contact::Fill(void)
 {
-	
 	return ;
 }
