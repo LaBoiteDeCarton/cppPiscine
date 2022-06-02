@@ -1,6 +1,6 @@
 #include "phonebook.class.hpp"
 
-Phonebook::Phonebook(void) : _index(0)
+Phonebook::Phonebook(void) : _index(-1)
 {
 	return ;
 }
@@ -16,8 +16,13 @@ void	Phonebook::Add(void)
 	return ;
 }
 
-void	Phonebook::Search(void)
+void	Phonebook::Show(void)
 {
+	int i;
+
+	i = 0;
+	while (i < 8)
+		this->_contacts[i++].ShortShow();
 	return ;
 }
 

@@ -8,12 +8,11 @@ public:
 	Phonebook(void);
 	~Phonebook(void);
 	void	Add(void);
-	void	Search(void);
+	void	Show(void);
 	void	Exit(void);
-
 private:
-	int	_index;
 	Contact _contacts[8];
+	int		_index;
 };
 
 #endif

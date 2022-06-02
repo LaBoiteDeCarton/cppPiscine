@@ -6,17 +6,19 @@
 
 static void	add_to_phoneBook(Phonebook *phoneBook)
 {
+	Contact contact;
+
 
 }
 
 static void	search_in_phoneBook(Phonebook *phoneBook)
 {
-	
+	phoneBook->Show();
 }
 
 int	main(int ac, char **av)
 {
-	char buff[512];
+	std::string buff;
 	Phonebook phoneBook;
 
 	std::cout << "----------------------------------------" << std::endl;
@@ -24,10 +26,12 @@ int	main(int ac, char **av)
 	std::cout << "----------------------------------------" << std::endl;
 	while (1)
 	{
+		if (!std::cin.good())
+			break ;
 		std::cout << "$>";
-		std::cin >> buff;
+		std::cin >> buff; //if std::cin is still open
 		if (!std::strcmp(buff, "ADD"))
-			add_to_phoneBook(&phoneBook);
+			phoneBook.Add();
 		if (!std::strcmp(buff, "SEARCH"))
 			search_in_phoneBook(&phoneBook);
 		if (!std::strcmp(buff, "EXIT"))
