@@ -15,7 +15,7 @@ private:
 public:
 	Contact();
 	~Contact();
-	void		ShortShow(void);
+	void		ShortShow(int index);
 	void		LongShow(void);
 	void		Fill(void);
 };

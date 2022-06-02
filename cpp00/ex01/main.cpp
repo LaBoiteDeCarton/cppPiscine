@@ -20,23 +20,23 @@ int	main(int ac, char **av)
 {
 	std::string buff;
 	Phonebook phoneBook;
-
-	std::cout << "----------------------------------------" << std::endl;
-	std::cout << "|  Phone Book v0.10.5 Pro ©            |" << std::endl;
-	std::cout << "----------------------------------------" << std::endl;
+	std::cout << "---------------------------------------------" << std::endl;
+	std::cout << "|  Phone Book v0.10.5 Pro ©                 |" << std::endl;
+	std::cout << "---------------------------------------------" << std::endl;
 	while (1)
 	{
 		if (!std::cin.good())
 			break ;
 		std::cout << "$>";
-		std::cin >> buff; //if std::cin is still open
-		if (!std::strcmp(buff, "ADD"))
+		std::getline(std::cin,buff);
+		if (!buff.compare("ADD"))
 			phoneBook.Add();
-		if (!std::strcmp(buff, "SEARCH"))
+		if (!buff.compare("SEARCH"))
 			search_in_phoneBook(&phoneBook);
-		if (!std::strcmp(buff, "EXIT"))
+		if (!buff.compare("EXIT"))
 			break ;
 		
 	}
 	std::cout << "Good bye from Phone Book Compagny" << std::endl;
+	system("leaks phonebook");
 }

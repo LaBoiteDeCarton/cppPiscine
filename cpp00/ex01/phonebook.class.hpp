@@ -9,7 +9,6 @@ public:
 	~Phonebook(void);
 	void	Add(void);
 	void	Show(void);
-	void	Exit(void);
 private:
 	Contact _contacts[8];
 	int		_index;
