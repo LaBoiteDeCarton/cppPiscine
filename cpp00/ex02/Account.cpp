@@ -22,6 +22,7 @@ Account::~Account( void )
 	std::cout << " index:" << this->_accountIndex;
 	std::cout << ";amount:" << this->checkAmount();
 	std::cout << ";closed" << std::endl;
+	Account::_nbAccounts--;
 	return ;
 }
 

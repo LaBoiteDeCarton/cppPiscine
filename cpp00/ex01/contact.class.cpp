@@ -2,7 +2,6 @@
 
 Contact::Contact(void)
 {
-	std::cout << "contact created" <<std::endl;
 	return ;
 }
 
@@ -11,36 +10,58 @@ Contact::~Contact()
 	return ;
 }
 
-void	Contact::ShortShow(int index)
+std::string	Contact::getFirstName()
 {
-	if (this->_firstName.empty())
-		return ;
-	std::cout << "|" << std::setw(10) << index << "|";
-	if (this->_firstName.length() <= 10)
-		std::cout << std::setw(10) << this->_firstName;
-	else
-		std::cout << this->_firstName.substr(0, 9) << ".";
-	std::cout << "|";
-	if (this->_lastName.length() <= 10)
-		std::cout << std::setw(10) << this->_lastName;
-	else
-		std::cout << this->_lastName.substr(0, 9) << ".";
-	std::cout << "|";
-	if (this->_nickName.length() <= 10)
-		std::cout << std::setw(10) << this->_nickName;
-	else
-		std::cout << this->_nickName.substr(0, 9) << ".";
-	std::cout << "|"<< std::endl;
+	return (this->_firstName);
+}
+
+std::string	Contact::getLastName()
+{
+	return (this->_lastName);
+}
+
+std::string	Contact::getNicktName()
+{
+	return (this->_nickName);
+}
+
+std::string	Contact::getPhoneNumber()
+{
+	return (this->_phoneNumber);
+}
+
+std::string	Contact::getDarkestSecret()
+{
+	return (this->_darkestSecret);
+}
+
+void		Contact::setFirstName(std::string content)
+{
+	this->_firstName = content;
 	return ;
 }
-void	Contact::LongShow(void)
+
+void		Contact::setLastName(std::string content)
 {
-	std::cout << "---Contact Details---------------------------" << std::endl;
-	std::cout << "First Name :" << this->_firstName << std::endl;
-	std::cout << "Last Name :" << this->_lastName << std::endl;
-	std::cout << "Nickname :" << this->_nickName << std::endl;
-	std::cout << "Phone Number :" << this->_phoneNumber << std::endl;
-	std::cout << "Darkest Secret :" << this->_darkestSecret << std::endl;
+	this->_lastName = content;
+	return ;
+}
+
+void		Contact::setNicktName(std::string content)
+{
+	this->_nickName = content;
+	return ;
+}
+
+void		Contact::setPhoneNumber(std::string content)
+{
+	this->_phoneNumber = content;
+	return ;
+}
+
+void		Contact::setDarkestSecret(std::string content)
+{
+	this->_darkestSecret = content;
 	return ;
 }
 
@@ -49,6 +70,8 @@ void	Contact::Fill()
 	std::cout << "---New Contact-------------------------------" << std::endl;
 	std::cout << "First Name: ";
 	std::getline(std::cin, this->_firstName);
+	if (!std::cin.good())
+			return  ;
 	while (this->_firstName[0] && this->_firstName[0] == ' ')
 		this->_firstName.erase();
 	while (this->_firstName.empty())
@@ -56,11 +79,15 @@ void	Contact::Fill()
 		std::cout << "incorrect input, please retry...." << std::endl;
 		std::cout << "First Name: ";
 		std::getline(std::cin, this->_firstName);
+		if (!std::cin.good())
+			return  ;
 		while (this->_firstName[0] && this->_firstName[0] == ' ')
 			this->_firstName.erase();
 	}
 	std::cout << "Last Name: ";
 	std::getline(std::cin, this->_lastName);
+	if (!std::cin.good())
+			return  ;
 	while (this->_lastName[0] && this->_lastName[0] == ' ')
 		this->_lastName.erase();
 	while (this->_lastName.empty())
@@ -68,11 +95,15 @@ void	Contact::Fill()
 		std::cout << "incorrect input, please retry...." << std::endl;
 		std::cout << "Last Name: ";
 		std::getline(std::cin, this->_lastName);
+		if (!std::cin.good())
+			return  ;
 		while (this->_lastName[0] && this->_lastName[0] == ' ')
 			this->_lastName.erase();
 	}
 	std::cout << "Nickname: ";
 	std::getline(std::cin, this->_nickName);
+	if (!std::cin.good())
+			return  ;
 	while (this->_nickName[0] && this->_nickName[0] == ' ')
 		this->_nickName.erase();
 	while (this->_nickName.empty())
@@ -80,11 +111,15 @@ void	Contact::Fill()
 		std::cout << "incorrect input, please retry...." << std::endl;
 		std::cout << "Nickname: ";
 		std::getline(std::cin, this->_nickName);
+		if (!std::cin.good())
+			return  ;
 		while (this->_nickName[0] && this->_nickName[0] == ' ')
 			this->_nickName.erase();
 	}
 	std::cout << "Phone Number: ";
 	std::getline(std::cin, this->_phoneNumber);
+	if (!std::cin.good())
+			return  ;
 	while (this->_phoneNumber[0] && this->_phoneNumber[0] == ' ')
 		this->_phoneNumber.erase();
 	while (this->_phoneNumber.empty())
@@ -92,11 +127,15 @@ void	Contact::Fill()
 		std::cout << "incorrect input, please retry...." << std::endl;
 		std::cout << "Phone Number: ";
 		std::getline(std::cin, this->_phoneNumber);
+		if (!std::cin.good())
+			return  ;
 		while (this->_phoneNumber[0] && this->_phoneNumber[0] == ' ')
 			this->_phoneNumber.erase();
 	}
 	std::cout << "Darkest Secret: ";
 	std::getline(std::cin, this->_darkestSecret);
+	if (!std::cin.good())
+			return  ;
 	while (this->_darkestSecret[0] && this->_darkestSecret[0] == ' ')
 		this->_darkestSecret.erase();
 	while (this->_darkestSecret.empty())
@@ -104,6 +143,8 @@ void	Contact::Fill()
 		std::cout << "incorrect input, please retry...." << std::endl;
 		std::cout << "Darkest Secret: ";
 		std::getline(std::cin, this->_darkestSecret);
+		if (!std::cin.good())
+			return  ;
 		while (this->_darkestSecret[0] && this->_darkestSecret[0] == ' ')
 			this->_darkestSecret.erase();
 	}

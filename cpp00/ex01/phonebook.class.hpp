@@ -7,11 +7,15 @@ class Phonebook
 public:
 	Phonebook(void);
 	~Phonebook(void);
-	void	Add(void);
-	void	Show(void);
+	void		NewContact(void);
+	void		ShowAllContacts(void);
+	void		ShowContactDetails(int index);
+	int			getNbTotalContact(void);
 private:
-	Contact _contacts[8];
-	int		_index;
+	void		_ShowShortContact(int index);
+	Contact 	_contacts[8];
+	int			_index;
+	int			_nbTotalContact;
 };
 
 #endif
