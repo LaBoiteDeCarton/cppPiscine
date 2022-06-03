@@ -5,14 +5,14 @@
 class Phonebook
 {
 public:
-	Phonebook(void);
-	~Phonebook(void);
+	Phonebook( void );
+	~Phonebook( void );
 	void		NewContact(void);
-	void		ShowAllContacts(void);
-	void		ShowContactDetails(int index);
-	int			getNbTotalContact(void);
+	void		ShowAllContacts(void) const;
+	void		ShowContactDetails(int index) const;
+	int			getNbTotalContact(void) const;
 private:
-	void		_ShowShortContact(int index);
+	void		_ShowShortContact(int index) const;
 	Contact 	_contacts[8];
 	int			_index;
 	int			_nbTotalContact;

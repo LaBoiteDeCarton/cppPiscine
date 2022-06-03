@@ -18,7 +18,7 @@ void	Phonebook::NewContact(void)
 	return ;
 }
 
-void	Phonebook::ShowAllContacts(void)
+void	Phonebook::ShowAllContacts(void) const
 {
 	int i;
 
@@ -34,7 +34,7 @@ void	Phonebook::ShowAllContacts(void)
 	return ;
 }
 
-void		Phonebook::_ShowShortContact(int index)
+void		Phonebook::_ShowShortContact(int index) const
 {
 	if (this->_contacts[index].getFirstName().empty())
 		return ;
@@ -57,7 +57,7 @@ void		Phonebook::_ShowShortContact(int index)
 	return ;
 }
 
-void		Phonebook::ShowContactDetails(int index)
+void		Phonebook::ShowContactDetails(int index) const
 {
 	std::cout << "---Contact Details---------------------------" << std::endl;
  	std::cout << "First Name :" << this->_contacts[index].getFirstName() << std::endl;
@@ -68,7 +68,7 @@ void		Phonebook::ShowContactDetails(int index)
  	return ;
 }
 
-int			Phonebook::getNbTotalContact(void)
+int			Phonebook::getNbTotalContact(void) const
 {
 	return (this->_nbTotalContact);
 }
