@@ -5,7 +5,7 @@
 
 int	main()
 {
-	DiamondTrap d("Firework");
+	DiamondTrap d("Bob");
 
 	d.highFivesGuys();
 	d.guardGate();

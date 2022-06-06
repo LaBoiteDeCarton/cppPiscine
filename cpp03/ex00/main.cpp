@@ -4,6 +4,7 @@ int	main()
 {
 	ClapTrap a("Bob");
 	ClapTrap b("Rose");
+	const ClapTrap c = b;
 
 	std::cout << "ClapTrap " << a.getName();
 	std::cout << " attackDamage: " << a.getAttackDamage();

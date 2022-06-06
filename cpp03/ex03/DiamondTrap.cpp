@@ -1,9 +1,14 @@
 #include "DiamondTrap.hpp"
 
-DiamondTrap::DiamondTrap( std::string name ): ClapTrap()
+DiamondTrap::DiamondTrap( void ): ClapTrap("default_clap_name"), ScavTrap(), FragTrap(), _name("default")
 {
-	this->_name = name;
-	this->ClapTrap::setName(name + "_clap_name");
+	this->_attackDamage = this->ClapTrap::_attackDamage;
+	this->_energyPoint = this->ScavTrap::_energyPoint;
+	this->_hitPoint = this->FragTrap::_hitPoint;
+}
+
+DiamondTrap::DiamondTrap( std::string name ): ClapTrap(name + "_clap_name"), ScavTrap(), FragTrap(), _name(name)
+{
 	this->_attackDamage = this->ClapTrap::_attackDamage;
 	this->_energyPoint = this->ScavTrap::_energyPoint;
 	this->_hitPoint = this->FragTrap::_hitPoint;

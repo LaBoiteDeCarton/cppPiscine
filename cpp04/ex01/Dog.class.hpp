@@ -3,6 +3,7 @@
 # include <string>
 # include <iostream>
 # include "Animal.class.hpp"
+# include "Brain.class.hpp"
 
 class Dog : public Animal
 {
@@ -11,9 +12,12 @@ public:
 	Dog( Dog const & src);
 	virtual ~Dog( void );
 
-	Dog&	operator=(Dog const & rhs);
+	Dog&			operator=(Dog const & rhs);
 
 	virtual void	makeSound() const;
+	const Brain &	getBrain() const;
+private:
+	Brain*			_brain;
 };
 
 #endif

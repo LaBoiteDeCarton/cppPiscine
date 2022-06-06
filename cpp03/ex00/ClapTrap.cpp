@@ -59,7 +59,7 @@ void	ClapTrap::takeDamage(unsigned int amount)
 	if (this->_hitPoint < 0)
 		this->_hitPoint = 0;
 	std::cout << "ClapTrap " << this->_name;
-	std::cout << " received an attack , taking "<< amount;
+	std::cout << " received an attack, taking "<< amount;
 	std::cout << " points of damage!" << std::endl;
 	return ;
 }

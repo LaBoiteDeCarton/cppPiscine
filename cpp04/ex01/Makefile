@@ -1,5 +1,5 @@
 NAME = Animal
-SRCS = main.cpp Animal.class.cpp Dog.class.cpp Cat.class.cpp  WrongAnimal.class.cpp WrongCat.class.cpp
+SRCS = main.cpp Animal.class.cpp Dog.class.cpp Cat.class.cpp Brain.class.cpp
 OBJS = ${SRCS:.cpp=.o}
 CC = c++
 FLAGS = -Wall -Wextra -Werror -std=c++98
