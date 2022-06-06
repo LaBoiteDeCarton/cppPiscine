@@ -34,3 +34,27 @@ const Brain &	Dog::getBrain() const
 {
 	return (*(this->_brain));
 }
+
+void			Dog::printIdeas() const
+{
+	std::cout << "Printing Ideas" << std::endl;
+	for (int i = 0; i < 100; i++)
+	{
+		if (this->_brain->getIdea(i).empty())
+			break;
+		std::cout << "Idea number " << i + 1 << " " << this->_brain->getIdea(i) << std::endl;
+	}
+}
+
+void			Dog::addIdea(std::string idea)
+{
+	int i;
+
+	for (i = 0; i < 100; i++)
+		if (this->_brain->getIdea(i).empty())
+			break;
+	if (i >= 100)
+		std::cout << "Brain overload" << std::endl;
+	else
+		this->_brain->putIdea(i, idea);
+}

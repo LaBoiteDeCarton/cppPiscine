@@ -1,42 +1,50 @@
-#include "Cat.class.hpp"
+#include "Dog.class.hpp"
 
-Cat::Cat( void ) : Animal("Cat")
+Dog::Dog( void ) : AAnimal("Dog")
 {
 	this->_brain = new Brain();
 	return ;
 }
 
-Cat::Cat( Cat const & src)
+Dog::Dog( Dog const & src)
 {
 	*this = src;
 	return ;
 }
 
-Cat&	Cat::operator=(Cat const & rhs)
+Dog&	Dog::operator=(Dog const & rhs)
 {
 	this->_type = rhs.getType();
 	*(this->_brain) = rhs.getBrain();
 	return (*this);
 }
 
-Cat::~Cat( void )
+AAnimal&	Dog::operator=(AAnimal const & rhs)
+{
+	this->_type = rhs.getType();
+	*(this->_brain) = rhs.getBrain();
+	return (*this);
+}
+
+Dog::~Dog( void )
 {
 	delete this->_brain;
 	return ;
 }
 
-void	Cat::makeSound() const
+void	Dog::makeSound() const
 {
-	std::cout << "Miaou Miaou !" << std::endl;
+	std::cout << "Wouf wouf !" << std::endl;
 }
 
-const Brain &	Cat::getBrain() const
+const Brain &	Dog::getBrain() const
 {
 	return (*(this->_brain));
 }
 
-void			Cat::printIdeas() const
+void			Dog::printIdeas() const
 {
+	std::cout << "Printing Ideas" << std::endl;
 	for (int i = 0; i < 100; i++)
 	{
 		if (this->_brain->getIdea(i).empty())
@@ -45,7 +53,7 @@ void			Cat::printIdeas() const
 	}
 }
 
-void			Cat::addIdea(std::string idea)
+void			Dog::addIdea(std::string idea)
 {
 	int i;
 
@@ -57,4 +65,3 @@ void			Cat::addIdea(std::string idea)
 	else
 		this->_brain->putIdea(i, idea);
 }
-

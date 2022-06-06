@@ -1,6 +1,6 @@
 #include "Cat.class.hpp"
 
-Cat::Cat( void ) : Animal("Cat")
+Cat::Cat( void ) : AAnimal("Cat")
 {
 	this->_brain = new Brain();
 	return ;
@@ -13,6 +13,13 @@ Cat::Cat( Cat const & src)
 }
 
 Cat&	Cat::operator=(Cat const & rhs)
+{
+	this->_type = rhs.getType();
+	*(this->_brain) = rhs.getBrain();
+	return (*this);
+}
+
+AAnimal&	Cat::operator=(AAnimal const & rhs)
 {
 	this->_type = rhs.getType();
 	*(this->_brain) = rhs.getBrain();

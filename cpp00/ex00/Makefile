@@ -13,9 +13,9 @@ ${NAME}: ${OBJS}
 all: ${NAME}
 
 clean:
-	rm ${OBJS}
+	rm -f ${OBJS}
 
 fclean: clean
-	rm ${NAME}
+	rm -f ${NAME}
 
 .PHONY: all, clean, fclean

@@ -12,11 +12,11 @@ ${NAME}: ${OBJS}
 
 all: ${NAME}
 
-clean:
-	rm ${OBJS}
+cclean:
+	rm -f ${OBJS}
 
 fclean: clean
-	rm ${NAME}
+	rm -f ${NAME}
 
 re: fclean ${NAME}
 

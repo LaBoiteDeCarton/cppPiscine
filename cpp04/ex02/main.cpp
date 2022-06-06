@@ -4,11 +4,8 @@
 
 void fun()
 {
-	Animal* meta = new Animal();
-	Dog* j = new Dog();
-	Cat* i = new Cat();
-
-	meta->makeSound();
+	AAnimal* j = new Dog();
+	AAnimal* i = new Cat();
 
 	i->addIdea("Burn the world");
 	i->addIdea("Pee on the floor");
@@ -19,17 +16,17 @@ void fun()
 	j->makeSound();	
 	j->printIdeas();
 
-	// Dog* h = new Dog();
-	// *h = *j;
-	// j->addIdea("Try to catch birds");
-	// h->addIdea("make a hole in the beach");
-	// j->printIdeas();
-	// h->printIdeas();
+	AAnimal* h = new Dog();
+	*h = *j; // ou *h = i est possible aussi
+	j->addIdea("Try to catch birds");
+	h->addIdea("make a hole in the beach");
+	j->printIdeas();
+	h->printIdeas();
 
-	delete meta;
+	//delete meta;
 	delete i;
 	delete j;
-	//delete h;
+	delete h;
 }
 
 int main()

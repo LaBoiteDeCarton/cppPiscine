@@ -16,6 +16,8 @@ public:
 
 	virtual void	makeSound() const;
 	const Brain &	getBrain() const;
+	void			printIdeas() const;
+	void			addIdea( std::string idea );
 private:
 	Brain*			_brain;
 };

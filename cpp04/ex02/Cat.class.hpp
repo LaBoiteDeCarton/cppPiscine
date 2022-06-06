@@ -5,7 +5,7 @@
 # include "Animal.class.hpp"
 # include "Brain.class.hpp"
 
-class Cat : public Animal
+class Cat : public AAnimal
 {
 public:
 	Cat( void );
@@ -13,6 +13,7 @@ public:
 	virtual ~Cat( void );
 
 	Cat&			operator=(Cat const & rhs);
+	AAnimal&		operator=(AAnimal const & rhs);
 
 	virtual void	makeSound() const;
 	const Brain &	getBrain() const;

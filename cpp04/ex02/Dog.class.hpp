@@ -1,18 +1,19 @@
-#ifndef CAT_CLASS_HPP
-# define CAT_CLASS_HPP
+#ifndef DOG_CLASS_HPP
+# define DOG_CLASS_HPP
 # include <string>
 # include <iostream>
 # include "Animal.class.hpp"
 # include "Brain.class.hpp"
 
-class Cat : public Animal
+class Dog : public AAnimal
 {
 public:
-	Cat( void );
-	Cat( Cat const & src);
-	virtual ~Cat( void );
+	Dog( void );
+	Dog( Dog const & src);
+	virtual ~Dog( void );
 
-	Cat&			operator=(Cat const & rhs);
+	Dog&			operator=(Dog const & rhs);
+	AAnimal&		operator=(AAnimal const & rhs);
 
 	virtual void	makeSound() const;
 	const Brain &	getBrain() const;
