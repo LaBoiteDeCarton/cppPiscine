@@ -3,6 +3,8 @@
 # include <string>
 # include "AMateria.abstract.hpp"
 
+class AMateria;
+
 class ICharacter
 {
 public:

@@ -1,6 +1,6 @@
+#include "AMateria.abstract.hpp"
 #include "IMateriaSource.interface.hpp"
 #include "MateriaSource.class.hpp"
-#include "AMateria.abstract.hpp"
 #include "Ice.class.hpp"
 #include "Cure.class.hpp"
 #include "Character.class.hpp"

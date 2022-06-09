@@ -1,6 +1,6 @@
 # include "AMateria.abstract.hpp"
 
-AMateria::AMateria(): _type("default")
+AMateria::AMateria(): _type("unknown source of power")
 {
 	return ;
 }
@@ -10,9 +10,21 @@ AMateria::AMateria(std::string const & type): _type(type)
 	return ;
 }
 
+AMateria::AMateria(AMateria const & src)
+{
+	*this = src;
+	return ;
+}
+
 AMateria::~AMateria()
 {
 	return ;
+}
+
+AMateria&	AMateria::operator=(AMateria const & src)
+{
+	this->_type = src.getType();
+	return (*this);
 }
 
 std::string const & AMateria::getType() const
@@ -22,5 +34,6 @@ std::string const & AMateria::getType() const
 
 void	AMateria::use(ICharacter& target)
 {
-	(void)target;
+	std::cout << "* a small breeze rise around "<< target.getName() << " and nothing happens *" << std::endl;
+	return ;
 }
