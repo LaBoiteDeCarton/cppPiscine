@@ -12,7 +12,7 @@ ${NAME}: ${OBJS}
 
 all: ${NAME}
 
-cclean:
+clean:
 	rm -f ${OBJS}
 
 fclean: clean

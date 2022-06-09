@@ -1,25 +1,28 @@
 #include "DiamondTrap.hpp"
 
-DiamondTrap::DiamondTrap( void ): ClapTrap("default_clap_name"), _name("default") //ScavTrap(), FragTrap(), 
+DiamondTrap::DiamondTrap( void )
 {
-	this->_attackDamage = this->ClapTrap::_attackDamage;
+	this->ClapTrap::setName("default_clap_name");
+	this->_attackDamage = this->FragTrap::_attackDamage;
 	this->_energyPoint = this->ScavTrap::_energyPoint;
 	this->_hitPoint = this->FragTrap::_hitPoint;
+	this->_name = "default";
 }
 
-DiamondTrap::DiamondTrap( std::string name ): ClapTrap(name + "_clap_name"), _name(name) //ScavTrap(), FragTrap(), 
+DiamondTrap::DiamondTrap( std::string name )
 {
-	this->_attackDamage = this->ClapTrap::_attackDamage;
+	this->ClapTrap::setName(name + "_clap_name");
+	this->_name = name;
+	this->_attackDamage = this->FragTrap::_attackDamage;
 	this->_energyPoint = this->ScavTrap::_energyPoint;
 	this->_hitPoint = this->FragTrap::_hitPoint;
 	return ;
 }
 
-DiamondTrap::DiamondTrap( DiamondTrap const & src) : ClapTrap(src.getName()) //ScavTrap(src.getName()), FragTrap(src.getName())
+DiamondTrap::DiamondTrap( DiamondTrap const & src)
 {
 	this->_name = src.getName();
-	//this->ClapTrap::setName(src.getName() + "_clap_name");
-	this->_attackDamage = this->ClapTrap::_attackDamage;
+	this->_attackDamage = this->FragTrap::_attackDamage;
 	this->_energyPoint = this->ScavTrap::_energyPoint;
 	this->_hitPoint = this->FragTrap::_hitPoint;
 }
@@ -41,4 +44,10 @@ DiamondTrap&	DiamondTrap::operator=(DiamondTrap const & ct)
 void DiamondTrap::whoAmI( void )
 {
 	std::cout << "I'm " << this->_name << " my ClapTrap name is " << this->ClapTrap::getName() << std::endl;
+}
+
+void	DiamondTrap::attack( const std::string& target )
+{
+	ScavTrap::attack(target);
+	return ;
 }

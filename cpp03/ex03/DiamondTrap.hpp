@@ -15,9 +15,12 @@ public:
 	DiamondTrap&	operator=( DiamondTrap const & ct );
 	
 	void			whoAmI( void );
-	using			ScavTrap::attack;
+	void			attack( const std::string& target );
 private:
 	std::string		_name;
+	int				_hitPoint;
+	int				_energyPoint;
+	int				_attackDamage;
 };
 
 
