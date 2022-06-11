@@ -26,7 +26,7 @@ ScavTrap::~ScavTrap()
 	return ;
 }
 
-ScavTrap::ScavTrap(ScavTrap const & ct): ClapTrap(ct.getName())
+ScavTrap::ScavTrap(ScavTrap const & ct)//: ClapTrap(ct.getName())
 {
 	std::cout << "ScavTrap Copy constructor called" << std::endl;
 	*this = ct;

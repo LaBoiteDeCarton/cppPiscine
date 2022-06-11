@@ -26,7 +26,7 @@ FragTrap::~FragTrap()
 	return ;
 }
 
-FragTrap::FragTrap(FragTrap const & ct): ClapTrap(ct.getName())
+FragTrap::FragTrap(FragTrap const & ct)//: ClapTrap(ct.getName())
 {
 	std::cout << "FragTrap Copy constructor called" << std::endl;
 	*this = ct;

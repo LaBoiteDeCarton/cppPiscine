@@ -15,7 +15,12 @@ public:
 	DiamondTrap&	operator=( DiamondTrap const & ct );
 	
 	void			whoAmI( void );
-	void			attack( const std::string& target );
+	// void			attack( const std::string& target );
+	void		attack( const std::string& target );
+	std::string	getName() const;
+	int			getHitPoint() const;
+	int			getEnergyPoint() const;
+	int			getAttackDamage() const;
 private:
 	std::string		_name;
 	int				_hitPoint;
