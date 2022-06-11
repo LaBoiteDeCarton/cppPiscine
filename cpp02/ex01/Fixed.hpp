@@ -12,14 +12,14 @@ public:
 	Fixed( float const value);
 	~Fixed( void );
 	
-	Fixed&	operator=( Fixed const & rhs);
+	Fixed&				operator=( Fixed const & rhs);
 
-	float	toFloat( void ) const;
-	int		toInt( void ) const;
-	int		getRawBits( void ) const;
-	void	setRawBits( int const raw );
+	float				toFloat( void ) const;
+	int					toInt( void ) const;
+	int					getRawBits( void ) const;
+	void				setRawBits( int const raw );
 private:
-	int			_fixed;
+	int					_fixed;
 	static const int	_binaryPoint;
 };
 

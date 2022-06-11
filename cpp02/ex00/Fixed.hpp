@@ -8,12 +8,12 @@ public:
 	Fixed( Fixed const & src);
 	~Fixed( void );
 	
-	Fixed&	operator=( Fixed const & rhs);
+	Fixed&				operator=( Fixed const & rhs);
 
-	int		getRawBits( void ) const;
-	void	setRawBits( int const raw );
+	int					getRawBits( void ) const;
+	void				setRawBits( int const raw );
 private:
-	int			_fixed;
+	int					_fixed;
 	static const int	_binaryPoint;
 };
 
