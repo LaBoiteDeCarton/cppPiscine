@@ -15,12 +15,13 @@ int main ()
 		PresidentialPardonForm f1("Voleur de l'orange du marchand");
 		RobotomyRequestForm f2("Elon Musk");
 		ShrubberyCreationForm f3("Versaille");
-		AForm *f4;
-		f4 = new RobotomyRequestForm("Arnold");
 
 		Intern  someRandomIntern;
     	AForm*   rrf;
     	rrf = someRandomIntern.makeForm("robotomy request", "Bender");
+		
+		AForm *f4;
+		f4 = new RobotomyRequestForm("Arnold");
 
 		a.signForm(f1); // peux signer
 		b.signForm(f1); // ne peux pas signer

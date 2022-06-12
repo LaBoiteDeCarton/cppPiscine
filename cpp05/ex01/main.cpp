@@ -9,9 +9,11 @@ int main ()
 		Bureaucrat b("Roger", 80);
 		Bureaucrat c("Ghislaine", 38);
 		Form f("A38", 38, 50);
+		std::cout << f << std::endl;
 		a.signForm(f);
 		b.signForm(f);
 		c.signForm(f);
+		std::cout << f << std::endl;
 	}
 	catch (const std::exception& e)
 	{

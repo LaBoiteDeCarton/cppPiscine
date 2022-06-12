@@ -75,10 +75,9 @@ const char *		Form::GradeTooLowException::what() const throw()
 
 std::ostream &		operator<<( std::ostream & o, Form const & rhs)
 {
-	o << "Formulaire \'" << rhs.getName() << "\': GTS(" << rhs.getGradeToSigne() << "), GTE(" << rhs.getGradeToExec() << "),";
-	if (rhs.getIsSigned())
-		o << "is signed";
-	else
-		o << "is not signed";
+	o << "Formulaire \'" << rhs.getName() << "\': GTS(" << rhs.getGradeToSigne() << "), GTE(" << rhs.getGradeToExec() << "), is ";
+	if (!rhs.getIsSigned())
+		o << "not ";
+	o << "signed";
 	return (o);
 }

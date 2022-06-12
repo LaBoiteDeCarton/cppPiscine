@@ -33,7 +33,7 @@ std::string const &		PresidentialPardonForm::getTarget() const
 	return (this->_target);
 }
 
-void					PresidentialPardonForm::action() const
+void					PresidentialPardonForm::_action() const
 {
 	std::cout << this->_target << " is forbidden for the sins by the powerful Zaphod Beeblebrox. Glory to the Emperor!" << std::endl;
 	return ;

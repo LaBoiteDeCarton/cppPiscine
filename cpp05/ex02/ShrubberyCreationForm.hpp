@@ -13,7 +13,6 @@ public:
 
 	ShrubberyCreationForm&	operator=(ShrubberyCreationForm const & src);
 
-	void					action() const;
 	std::string const &		getTarget() const;
 	
 	class OpenFileException: public std::exception
@@ -22,6 +21,7 @@ public:
 		virtual const char *	what() const throw();
 	};
 private:
+	void					_action() const;
 	std::string				_target;
 };
 

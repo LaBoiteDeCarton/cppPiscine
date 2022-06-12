@@ -17,13 +17,12 @@ void fun()
 	j->printIdeas();
 
 	AAnimal* h = new Dog();
-	*h = *j; // ou *h = i est possible aussi
+	*h = *j;
 	j->addIdea("Try to catch birds");
 	h->addIdea("make a hole in the beach");
 	j->printIdeas();
 	h->printIdeas();
 
-	//delete meta;
 	delete i;
 	delete j;
 	delete h;

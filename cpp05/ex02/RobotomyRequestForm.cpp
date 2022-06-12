@@ -34,7 +34,7 @@ std::string const &		RobotomyRequestForm::getTarget() const
 	return (this->_target);
 }
 
-void					RobotomyRequestForm::action() const
+void					RobotomyRequestForm::_action() const
 {
 	int i;
 

@@ -13,9 +13,9 @@ public:
 
 	RobotomyRequestForm&	operator=(RobotomyRequestForm const & src);
 
-	void					action() const;
 	std::string const &		getTarget() const;
 private:
+	void					_action() const;
 	std::string				_target;
 };
 

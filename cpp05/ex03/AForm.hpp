@@ -13,7 +13,6 @@ public:
 	AForm(AForm const &src);
 	virtual ~AForm();
 
-	virtual void		action() const = 0;
 	void				execute(Bureaucrat const & executor) const;
 	void				beSigned(Bureaucrat const &b);
 	std::string			getName() const;
@@ -38,6 +37,7 @@ public:
 		virtual const char *	what() const throw();
 	};
 private:
+	virtual void		_action() const = 0;
 	std::string const	_name;
 	bool				_issigned;
 	int					_gradetosigne;

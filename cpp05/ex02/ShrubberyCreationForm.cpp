@@ -34,7 +34,7 @@ std::string const &		ShrubberyCreationForm::getTarget() const
 	return (this->_target);
 }
 
-void					ShrubberyCreationForm::action() const
+void					ShrubberyCreationForm::_action() const
 {
 	std::ofstream	ofs;
 

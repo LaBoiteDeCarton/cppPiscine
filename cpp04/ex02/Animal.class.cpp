@@ -16,12 +16,6 @@ AAnimal::AAnimal( AAnimal const & src)
 	return ;
 }
 
-// AAnimal&	AAnimal::operator=(AAnimal const & rhs)
-// {
-// 	this->_type = rhs.getType();
-// 	return (*this);
-// }
-
 AAnimal::~AAnimal( void )
 {
 	return ;
