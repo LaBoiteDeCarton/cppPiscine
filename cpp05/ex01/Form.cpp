@@ -1,4 +1,5 @@
 #include "Form.hpp"
+#include "Bureaucrat.hpp"
 
 Form::Form( void )
 {
@@ -34,6 +35,14 @@ Form		Form::operator=(Form const & rhs)
 	return (*this);
 }
 
+void				Form::beSigned(Bureaucrat const &b)
+{
+	if (b.getGrade() > this->_gradetosigne)
+		throw Form::GradeTooLowException();
+	this->_issigned = true;
+	return ;
+}
+
 std::string			Form::getName() const
 {
 	return (this->_name);
@@ -52,6 +61,16 @@ int			Form::getGradeToSigne() const
 int			Form::getGradeToExec() const
 {
 	return (this->_gradetoexec);
+}
+
+const char *		Form::GradeTooHighException::what() const throw()
+{
+	return ("Grade too high");
+}
+
+const char *		Form::GradeTooLowException::what() const throw()
+{
+	return ("Grade too low");
 }
 
 std::ostream &		operator<<( std::ostream & o, Form const & rhs)

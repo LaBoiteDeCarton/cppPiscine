@@ -18,15 +18,15 @@ int main ()
 	}
 	catch(const Bureaucrat::GradeTooHighException& e)
 	{
-		std::cerr << e.what() << '\n';
+		std::cerr << e.what() << std::endl;
 	}
 	catch(const Bureaucrat::GradeTooLowException& e)
 	{
-		std::cerr << e.what() << '\n';
+		std::cerr << e.what() << std::endl;
 	}
 	catch(const std::exception& e)
 	{
-		std::cerr << e.what() << '\n';
+		std::cerr << e.what() << std::endl;
 	}
 	try
 	{
@@ -35,15 +35,15 @@ int main ()
 	}
 	catch(const Bureaucrat::GradeTooHighException& e)
 	{
-		std::cerr << e.what() << '\n';
+		std::cerr << e.what() << std::endl;
 	}
 	catch(const Bureaucrat::GradeTooLowException& e)
 	{
-		std::cerr << e.what() << '\n';
+		std::cerr << e.what() << std::endl;
 	}
 	catch(const std::exception& e)
 	{
-		std::cerr << e.what() << '\n';
+		std::cerr << e.what() << std::endl;
 	}
 	try
 	{
@@ -56,15 +56,15 @@ int main ()
 	}
 	catch(const Bureaucrat::GradeTooHighException& e)
 	{
-		std::cerr << e.what() << '\n';
+		std::cerr << e.what() << std::endl;
 	}
 	catch(const Bureaucrat::GradeTooLowException& e)
 	{
-		std::cerr << e.what() << '\n';
+		std::cerr << e.what() << std::endl;
 	}
 	catch(const std::exception& e)
 	{
-		std::cerr << e.what() << '\n';
+		std::cerr << e.what() << std::endl;
 	}
 	system("leaks Bureaucraty | grep leaked");
 	return (0);

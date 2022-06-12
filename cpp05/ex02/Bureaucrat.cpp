@@ -1,4 +1,5 @@
 #include "Bureaucrat.hpp"
+#include "AForm.hpp"
 
 Bureaucrat::Bureaucrat(): _name("unknown"), _grade(150)
 {
@@ -32,7 +33,7 @@ Bureaucrat&			Bureaucrat::operator=(Bureaucrat const & src)
 	return (*this);
 }
 
-void				Bureaucrat::signForm(Form &	f)
+void				Bureaucrat::signForm(AForm &	f)
 {
 	try
 	{
@@ -42,6 +43,19 @@ void				Bureaucrat::signForm(Form &	f)
 	catch(const std::exception& e)
 	{
 		std::cerr << this->_name << " couldn't sign " << f.getName() << " because " << e.what() << std::endl;
+	}
+}
+
+void				Bureaucrat::executeForm(AForm const & form)
+{
+	try
+	{
+		form.execute(*this);
+		std::cout << this->_name << " executed " << form.getName() << std::endl;
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << this->_name << " couldn't execute " << form.getName() << " because " << e.what() << std::endl;
 	}
 }
 
