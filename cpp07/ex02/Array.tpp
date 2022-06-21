@@ -7,7 +7,7 @@ class Array
 public:
 	Array( void );
 	Array( unsigned int n );
-	Array(Array const & src);
+	Array(Array<T> const & src);
 	~Array( void );
 
 	T &				operator[](unsigned int idx) const;
@@ -37,7 +37,7 @@ Array<T>::Array( unsigned int n ): _size(n)
 }
 
 template< typename T>
-Array<T>::Array( Array const & src )
+Array<T>::Array( Array<T> const & src )
 {
 	this->_array = NULL;
 	*this = src;
