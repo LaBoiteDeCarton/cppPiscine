@@ -31,10 +31,24 @@ int main()
 	}
 	
 	std::stack<int> s(mstack);
-	s.push(42);	
+	s.push(42);
 	{
 		MutantStack<int>::iterator it = mstack.begin();
 		MutantStack<int>::iterator ite = mstack.end();
+		++it;
+		--it;
+		while (it != ite)
+		{	
+    		std::cout << *it << std::endl;
+			++it;
+		}
+	}
+
+	MutantStack<int> mstackcopy(mstack);
+	mstack.push(43);
+	{
+		MutantStack<int>::iterator it = mstackcopy.begin();
+		MutantStack<int>::iterator ite = mstackcopy.end();
 		++it;
 		--it;
 		while (it != ite)

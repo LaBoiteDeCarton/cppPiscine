@@ -2,7 +2,7 @@
 #include <vector>
 #include <iostream>
 #include <algorithm>
-#include "easyfind.tpp"
+#include "easyfind.hpp"
 
 template<typename T>
 void	show(T const & t)
